@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <title>miked.ai</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta property="title" content="OSM Demo" />
+    <meta property="description" content="Miked.ai - 3D city models demo" />
+    <meta
+      property="keywords"
+      content="OSM Buildings, OSMBuildings, OSM-Buildings, 3D Buildings, Extruded Buildings, Building Geometry, 3D Massing, Vector Tiles, 3D Architecture, OSM-3D, 3D, VR, Virtual Reality, DEM, DSM, Building Heights, Elevation Model, LIDAR, Point Cloud, Building, Buildings, CityGML, City model, Virtual city models, Leaflet, LeafletJS, Leaflet.js, OpenLayers, Jan Marsch, Berlin, Terrain, Map, Maps, Mapbox, MapboxGL, Cesium, CartoDB, CARTO, Mapzen, Perspective, Polygons, BIM, OSM, OpenStreetMap, JS, JavaScript, Library, WebGL, Example, Examples, Indoor, Layer, BuildingLayer, BuildingsLayer, Footprint, Coordinates, Geometry, JSON, GeoJSON, Height, Extract, node, nodeJS, node.js, PostGIS, Geo, GPS, GIS, Visualization, Latitude, Longitude, Mercator, Projection, Panning, Zooming, API"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link
+      href="https://cdn.osmbuildings.org/4.1.1/OSMBuildings.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.osmbuildings.org/4.1.1/OSMBuildings.js"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      html,
+      body {
+        overflow: hidden;
+      }
+
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+
+      .osmb-attribution {
+        bottom: 30px !important;
+      }
+
+      @media screen and (max-width: 640px) {
+        .osmb-attribution {
+          display: none;
+        }
+      }
+
+      .download {
+        max-width: 250px;
+        position: absolute;
+        left: 20px;
+        bottom: 48px;
+        background: rgba(25, 100, 125, 0.8); /* Old browsers */
+        background: linear-gradient(
+          to bottom,
+          rgba(125, 200, 225, 0.8) 0%,
+          rgba(25, 100, 125, 0.8) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //	border-radius: 10px;
+        border: 0px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        padding: 12px 16px;
+        cursor: pointer;
+      }
+
+      .download h1 {
+        margin: 0 0 0px 0;
+        font-size: 24px;
+        color: #ffffff;
+      }
+    </style>
+    <script src="js/lib/jquery-3.2.1.min.js"></script>
+    <script src="./js/Events.js"></script>
+    <script src="./js/Search.js"></script>
+    <script src="./js/Params.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/map.js"></script>
+  </head>
+
+  <body class="fullscreen">
+    <header>
+      <a href="#">miked.ai</a>
+
+      <div class="spacer"></div>
+
+      <div class="nav">
+        <a class="nav-item" href="#">miked.ai</a>
+      </div>
+    </header>
+    <div id="map"></div>
+
+    <div id="sidebar">
+      <div id="sidebar-scroll">
+        <h3>Salesforce</h3>
+        <input type="text" id="agent" placeholder="Agent" />
+        <input type="text" id="note" placeholder="Note" />
+        <div>
+          Last contact
+          <input
+            type="text"
+            disabled
+            id="address"
+            value="2/20/2024"
+            label="First Contact: "
+          />
+        </div>
+
+        <h3>Property Info</h3>
+        <ul id="search-results"></ul>
+      </div>
+    </div>
+
+    <form id="search">
+      <input type="text" autocorrect="off" placeholder="Search" />
+      <button
+        id="search-trigger-button"
+        type="button"
+        class="icon-button fa-icon"
+        title="Start search"
+      >
+        &#xf002;</button
+      ><span class="vr"></span
+      ><button
+        id="sidebar-toggle-button"
+        type="button"
+        class="icon-button fa-icon"
+        title="Toggle sidebar"
+      >
+        &#xf0c9;
+      </button>
+    </form>
+
+    <footer class="footer">
+      <a class="footer-item" href="./copyright/">© OSM Buildings</a>
+      <a
+        class="footer-item"
+        href="https://twitter.com/osmbuildings/"
+        title="@osmbuildings on Twitter"
+        >Twitter</a
+      >
+      <a
+        class="footer-item"
+        href="https://github.com/osmbuildings/"
+        title="OSM Buildings on Github"
+        >Github</a
+      >
+      <a class="footer-item" href="./privacy/">Privacy</a>
+      <a class="footer-item" href="./terms/">Terms</a>
+      <a class="footer-item" href="./contact/">Contact</a>
+    </footer>
+  </body>
+</html>
